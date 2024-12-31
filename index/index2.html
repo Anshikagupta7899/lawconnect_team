@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index Page</title>
+    <!-- Bootstrap CSS -->                                                                      
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* General Styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #f9f9f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header/Navbar Styling */
+        .navbar {
+            background: linear-gradient(to right, #8f4415, #bd9a72);
+            border-bottom: 2px solid #c58c69;
+            padding: 10px 0;
+        }
+
+        .navbar-brand {
+            color: white;
+            font-size: 2rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            transition: all 0.5s ease-in-out;
+        }
+        .navbar-brand:hover {
+            color: rgba(255, 255, 255, 0.7); /* Slight fade effect on hover */
+            text-shadow: none;  /* Remove the shadow effect */
+        }
+
+        /* Logo Image Style */
+        #img {
+            transition: all 0.3s ease;
+            height: 50px;
+            margin-right: 15px;
+            opacity: 0.8;  /* Initial opacity */
+        }
+
+        /* Navbar Logo Dissolve Effect */
+        .navbar-brand:hover #img {
+            opacity: 0.3;  /* Make the logo more transparent on hover */
+            transform: scale(1.1);  /* Slightly scale up the logo */
+        }
+
+        .nav-link {
+            color: #f8f9fa;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        .nav-link:hover {
+            color: #8f4415;
+            text-decoration: underline;
+        }
+
+        /* Carousel Styling */
+        .carousel-inner img {
+            height: 500px;
+            object-fit: cover;
+            filter: brightness(70%);
+        }
+        #slide1 {
+            background: url('background_1.jpg') no-repeat center center;
+            background-size: cover;
+        }
+        #slide2 {
+            background: url('backg.jpg') no-repeat center center;
+            background-size: cover;
+            height: 100%;
+        }
+
+        /* Card Styling */
+        .card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease-in-out;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.25);
+        }
+        .card-img-top {
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            height: 200px;
+            object-fit: cover;
+        }
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #8f4415;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .card-text {
+            font-size: 1rem;
+            color: #6c757d;
+            margin-bottom: 1.5rem;
+        }
+        .btn-danger {
+            background-color: #8f4415;
+            color: white;
+            border-radius: 50px;
+            padding: 12px 30px;
+            transition: all 0.3s ease;
+        }
+        .btn-danger:hover {
+            background-color: #c58c69;
+            transform: scale(1.05);
+        }
+
+        /* Footer Styling */
+        footer {
+            background-color: #f8f9fa;
+            color: #6c757d;
+            padding: 40px 0;
+            text-align: center;
+            margin-top: 50px;
+            border-top: 3px solid #8f4415;
+        }
+        footer p {
+            font-size: 1rem;
+            margin-bottom: 10px;
+        }
+        footer a {
+            color: #8f4415;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        footer a:hover {
+            color: #c58c69;
+            text-decoration: underline;
+        }
+
+        /* Animations */
+        @keyframes slideIn {
+            0% {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .animated-section {
+            animation: slideIn 0.8s ease-out;
+        }
+
+        /* Top Buttons Styling */
+        .top-buttons a {
+            margin: 5px;
+            color: #fff;
+            background-color: #8f4415;
+            border: 2px solid #8f4415;
+            border-radius: 50px;
+            padding: 8px 20px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        .top-buttons a:hover {
+            background-color: #c58c69;
+            color: white;
+            transform: scale(1.1);
+        }
+
+        /* Ensure the buttons inside the card are aligned on the same line */
+.d-flex .btn {
+    width: 48%; /* Ensures buttons take up half the space of the container each */
+    margin-right: 4%; /* Adds a little space between the buttons */
+}
+
+.d-flex .btn:last-child {
+    margin-right: 0; /* Removes margin on the last button */
+}
+
+
+    </style>
+</head>
+<body>
+
+    <!-- Header/Navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <!-- <img src="logo.jpg" alt="LawConnects Logo" id="img"> -->
+            <a class="navbar-brand" href="index2.html">LawConnects</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="dash.html">Search Lawyers</a></li>
+                    <li class="nav-item"><a class="nav-link" href="reviews.html">Lawyer Reviews</a></li>
+                    <li class="nav-item"><a class="nav-link" href="case.html">Case Management</a></li>
+                    <li class="nav-item"><a class="nav-link" href="your profile.html">Your Profiles</a></li>
+                    <li class="nav-item"><a class="nav-link" href="search.html">Search your lawyer by name</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Slider Section -->
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active" id="slide1">
+                <img src="law.jpg" class="d-block w-100" alt="Legal Services">
+            </div>
+            <div class="carousel-item">
+                <img src="backg.jpg" class="d-block w-100" alt="Professional Lawyers">
+            </div>
+            <div class="carousel-item">
+                <img src="https://via.placeholder.com/1200x400?text=Connect+With+Us" class="d-block w-100" alt="Connect With Us">
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+    <!-- Cards Section -->
+    <!-- Cards Section -->
+<div class="container my-5 animated-section">
+    <div class="row">
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="background__1.jpg" class="card-img-top" alt="Login">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Login</h5>
+                    <p class="card-text">Access your account by logging in.</p>
+                    <a href="login.html" class="btn btn-danger">Login</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <img src="backg.jpg" class="card-img-top" alt="Card Image 2">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Register</h5>
+                    <p class="card-text">Create a new account.</p>
+                    <div class="d-flex justify-content-between">
+                        <a href="registration_lawyer.html" class="btn btn-danger w-48">Register as Lawyer</a>
+                        <a href="registration_lawyer.html" class="btn btn-danger w-48">Register as Client</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <img src="background_3.jpg" class="card-img-top" alt="Card Image 3">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Contact Us</h5>
+                    <p class="card-text">Create your new account.</p>
+                    <a href="contact1.html" class="btn btn-danger">Register as Client</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer>
+    <a href="fundamental rights.html"><h4> Visit your Fundamental Human RIGHTS</h4></a>
+</footer>
+
+
+                    
+

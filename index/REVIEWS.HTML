@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lawyer Reviews</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4c5a7;
+        }
+
+        /* Header Styling */
+        .navbar {
+            background: linear-gradient(to right, #8f4415, #bd9a72);
+            /* background-color: #deccb3; */
+            border-bottom: 2px solid #8f4415;
+            font-style: black;
+            color: #020a10cb;
+        }
+        .navbar-brand {
+            font-weight: bold;
+            color:white;
+        }
+        .nav-link {
+            color: #f2f4f7;
+            font-weight: 500;
+        }
+        .nav-link:hover {
+            color: #8f4415;
+        }
+
+        /* Footer Styling */
+        footer {
+            background-color: #f8f9fa;
+            border-top: 2px solid #8f4415;
+            color: #020a10cb;
+            padding: 10px 0;
+            text-align: center;
+            margin-top: 20px;
+            background: linear-gradient(to right, #8f4415, #bd9a72);
+        }
+
+        /* Review Section Styling */
+        .review-header {
+            text-align: center;
+            margin: 30px 0;
+        }
+        .review-header h1 {
+            color: #8f4415;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
+        /* Review Form Styling */
+        .form-group label {
+            color: #8f4415;
+        }
+
+        .btn-primary {
+            background-color: #8f4415;
+            border-color: #8f4415;
+        }
+
+        .btn-primary:hover {
+            background-color: #7d3d11;
+            border-color: #7d3d11;
+        }
+
+        /* Review Display Styling */
+        .review-card {
+            margin-top: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 15px;
+        }
+
+        .review-card h5 {
+            color: #8f4415;
+        }
+
+        .review-card p {
+            color: #6c757d;
+        }
+
+        .rating {
+            color: gold;
+        }
+
+        /* Floating Badge Styling */
+        .floating-badge {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #8f4415;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: bold;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header/Navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="index2.html">LAWCONNECTS</a>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="index2.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="search.html">Search Lawyers</a></li>
+                    <li class="nav-item"><a class="nav-link" href="reviews.html">Lawyer Reviews</a></li>
+                    <li class="nav-item"><a class="nav-link" href="case.html">Case Management</a></li>
+                    <li class="nav-item"><a class="nav-link" href="your profile.html">Profiles</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Lawyer Review Section -->
+    <div class="container review-header">
+        <h1>Lawyer Reviews</h1>
+        <p>Share your experience with a lawyer</p>
+    </div>
+
+    <!-- Review Form -->
+    <div class="container mb-5">
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+                <form id="reviewForm">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="rating">Rating (out of 5)</label>
+                        <input type="number" class="form-control" id="rating" min="1" max="5" placeholder="Enter rating" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="reviewMessage">Your Review</label>
+                        <textarea class="form-control" id="reviewMessage" rows="4" placeholder="Write your review here" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Submit Review</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Display Reviews Section -->
+    <div class="container">
+        <h3 class="text-center mb-4" style="color: #8f4415;">All Reviews</h3>
+        <div class="row" id="reviewsContainer">
+            <!-- Reviews will be dynamically added here -->
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Your Website. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Floating Badge -->
+    <div class="floating-badge" id="badge">
+        New Reviews
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        // Array to store reviews
+        const reviews = [];
+
+        // Function to display reviews
+        function displayReviews() {
+            const reviewsContainer = document.getElementById("reviewsContainer");
+            reviewsContainer.innerHTML = ""; // Clear previous reviews
+
+            if (reviews.length > 0) {
+                reviews.forEach(review => {
+                    const reviewCard = document.createElement("div");
+                    reviewCard.classList.add("col-md-4");
+                    reviewCard.classList.add("mb-4");
+                    reviewCard.innerHTML = `
+                        <div class="card review-card">
+                            <div class="card-body">
+                                <h5 class="card-title">${review.name}</h5>
+                                <p class="rating">${"★".repeat(review.rating)}</p>
+                                <p class="card-text">${review.message}</p>
+                            </div>
+                        </div>
+                    `;
+                    reviewsContainer.appendChild(reviewCard);
+                });
+            } else {
+                reviewsContainer.innerHTML = "<p>No reviews yet. Be the first to share your experience!</p>";
+            }
+        }
+
+        // Handle review submission
+        document.getElementById("reviewForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            // Get form values
+            const name = document.getElementById("name").value;
+            const rating = parseInt(document.getElementById("rating").value);
+            const message = document.getElementById("reviewMessage").value;
+
+            // Add the new review to the reviews array
+            reviews.push({ name, rating, message });
+
+            // Clear the form fields
+            document.getElementById("reviewForm").reset();
+
+            // Display the updated reviews
+            displayReviews();
+
+            // Show the floating badge indicating new reviews
+            document.getElementById("badge").style.display = "block";
+        });
+
+        // Initial display of reviews
+        displayReviews();
+    </script>
+</body>
+</html>

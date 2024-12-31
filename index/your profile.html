@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Management</title>
+    <!-- css -->
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+     <style>body {
+        font-family: Arial, sans-serif;
+        background-color: #5b371e;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+    
+    .container {
+        background-color: #efc594;
+        padding: 200px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        width: 300px;
+        text-align: center;
+        margin: 20px;
+        background-image: url(newlaw.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+    }
+    
+    h2 {
+        margin-bottom: 20px;
+    }
+    
+    .form-group {
+        margin-bottom: 15px;
+        text-align: left;
+    }
+    
+    label {
+        display: block;
+        margin-bottom: 5px;
+    }
+    
+    input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    
+    button {
+        width: 100%;
+        padding: 10px;
+        background-color: #28a745;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    
+    button:hover {
+        background-color: #218838;
+    }
+    
+    .hidden {
+        display: none;
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Your Profile</h2>
+        <form id="profileForm">
+            <div class="form-group">
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" name="firstName" required>
+            </div>
+            <div class="form-group">
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" name="lastName" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" required>
+            </div>
+            <button type="submit">Save Profile</button>
+        </form>
+
+        <div id="profileDisplay" class="hidden">
+            <h3>Profile Information</h3>
+            <p><strong>First Name:</strong> <span id="displayFirstName"></span></p>
+            <p><strong>Last Name:</strong> <span id="displayLastName"></span></p>
+            <p><strong>Email:</strong> <span id="displayEmail"></span></p>
+            <p><strong>Date of Birth:</strong> <span id="displayDob"></span></p>
+            <button id="editProfile">Edit Profile</button>
+        </div>
+    </div>
+    <!-- <script src="scripts.js"></script> -->
+     <!-- javascript -->
+      <script>
+        document.getElementById('profileForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    // Get form values
+    const firstName = document.getElementById('firstName').value;
+    const lastName = document.getElementById('lastName').value;
+    const email = document.getElementById('email').value;
+    const dob = document.getElementById('dob').value;
+
+    // Display profile information
+    document.getElementById('displayFirstName').innerText = firstName;
+    document.getElementById('displayLastName').innerText = lastName;
+    document.getElementById('displayEmail').innerText = email;
+    document.getElementById('displayDob').innerText = dob;
+
+    // Show profile display and hide form
+    document.getElementById('profileForm').classList.add('hidden');
+    document.getElementById('profileDisplay').classList.remove('hidden');
+});
+
+document.getElementById('editProfile').addEventListener('click', function() {
+    // Show form and hide profile display
+    document.getElementById('profileForm').classList.remove('hidden');
+    document.getElementById('profileDisplay').classList.add('hidden');
+});
+
+      </script>
+</body>
+</html>

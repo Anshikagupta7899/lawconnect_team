@@ -1,0 +1,78 @@
+*{
+   margin: auto;
+}
+    
+
+body {
+    font-family: Arial, sans-serif;
+     background-color: #5b371e; */
+    display: flex:flexbox
+    justify-content: left;
+    align-items: left;
+    height: 100vh;
+    margin: 10;
+}
+h3{
+    align-content: center;
+}
+
+.container {
+    border: #28a745;;
+    background-image: url(newlaw.jpg);
+    background-repeat:no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 80px;
+    padding-left: 10%;
+    padding-right: 50%;
+    margin-left: 10%;
+    margin-right: 10%;
+    box-sizing: 30vh;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    width: 300px;
+    align-content: left;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+#document{
+    box-shadow: #fff;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input, select {
+    width: 100%;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    align-items: end;
+}
+
+button:hover {
+    background-color: #235b2f;
+}
+input{
+    background-color: #fff;
+}

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Header Styling */
+        .navbar {
+            background-color: #f8f9fa;
+            border-bottom: 2px solid #8f4415;
+        }
+        .navbar-brand {
+            font-weight: bold;
+            color: #8f4415;
+        }
+        .nav-link {
+            color: #6c757d;
+            font-weight: 500;
+        }
+        .nav-link:hover {
+            color: #8f4415;
+        }
+        .top-buttons a {
+            margin: 5px;
+            color: #8f4415;
+            border: 1px solid #8f4415;
+            border-radius: 20px;
+            padding: 5px 10px;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .top-buttons a:hover {
+            background-color: #8f4415;
+            color: white;
+        }
+
+        /* Footer Styling */
+        footer {
+            background-color: #f8f9fa;
+            border-top: 2px solid #8f4415;
+            color: #6c757d;
+            padding: 10px 0;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        /* Login Box */
+        .login-container {
+            margin-top: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 70vh;
+        }
+        .login-box {
+            background-color: #f1e4dc; /* A lighter shade of brown */
+            padding: 30px 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 350px;
+            width: 100%;
+        }
+        .login-box h2 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-align: center;
+            color: #8f4415;
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            font-weight: bold;
+            color: #555;
+        }
+        .form-control {
+            border-radius: 20px;
+        }
+        .btn-primary {
+            background-color: #8f4415;
+            border:10px;
+            border-radius: 20px;
+            margin: 10px;
+            box-sizing: 60px; 
+            line-height: 2.5;
+            padding: 1px 120px;
+            font-size: 1rem;
+            text-align: center;
+            color: #fff;
+            text-shadow: 1px 1px 1px #000;
+            border-radius: 10px;
+            /* background-color: rgba(220, 0, 0, 1);
+            background-image: linear-gradient(to top leftrgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0.2) 30%,
+    rgba(0, 0, 0, 0) */
+        }
+        .btn-primary:hover {
+            background-color: #6e3611;
+        }
+        .navbar {
+            background: linear-gradient(to right, #8f4415, #bd9a72);
+            border-bottom: 2px solid #c58c69;
+            padding: 10px 0;
+        }
+
+        .navbar-brand {
+            color: white;
+            font-size: 2rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            transition: all 0.5s ease-in-out;
+        }
+        .navbar-brand:hover {
+            color: rgba(255, 255, 255, 0.7); /* Slight fade effect on hover */
+            text-shadow: none;  /* Remove the shadow effect */
+        }
+        .navbar-brand:hover #img {
+            opacity: 0.3;  /* Make the logo more transparent on hover */
+            transform: scale(1.1);  /* Slightly scale up the logo */
+        }
+
+        .nav-link {
+            color: #f8f9fa;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        .nav-link:hover {
+            color: #8f4415;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header/Navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="index2.html">LAWCONNECT</a>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav ml-auto">
+                    <li></li>
+                    <li class="nav-item"><a class="nav-link" href="index2.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="search.html">Search Lawyers</a></li>
+                    <li class="nav-item"><a class="nav-link" href="reviews.html">Lawyer Reviews</a></li>
+                    <li class="nav-item"><a class="nav-link" href="case.html">Case Management</a></li>
+                    <li class="nav-item"><a class="nav-link" href="your profile.html">Your Profiles</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Login Container -->
+    <div class="container login-container">
+        <div class="login-box">
+            <h2>Login</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" class="form-control" placeholder="Enter your username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" class="form-control" placeholder="Enter your password" required>
+                </div>
+                <div class="role-selection form-group">
+                    <label>
+                        <input type="radio" name="role" value="lawyer" required> Lawyer
+                    </label>
+                    <label>
+                        <input type="radio" name="role" value="client" required> Client
+                    </label>
+                </div>
+                <button type="submit"  class="btn-primary">Login</button>
+            </form>
+            <div id="loginMessage"></div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Your Website. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+    
+        // Predefined username and password (for demonstration purposes)
+        const validUsername = 'anshika gupta';
+        const validPassword = 'anshika';
+    
+        // Get form values
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+    
+        // Check if the entered credentials are correct
+        if (username === validUsername && password === validPassword) {
+            document.getElementById('loginMessage').textContent = 'Login successful!';
+            document.getElementById('loginMessage').style.color = 'green';
+        } else {
+            document.getElementById('loginMessage').textContent = 'Invalid username or password.';
+            document.getElementById('loginMessage').style.color = 'red';
+        }
+    });
+    </script>
+</body>
+</html>

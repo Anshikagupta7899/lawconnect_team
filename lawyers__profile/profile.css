@@ -1,0 +1,103 @@
+body {
+    font-family: Arial, sans-serif;
+    background:linear-gradient(to right #946719  #e8be76);
+    margin: 10px;;
+    padding:10;
+}
+
+.resume-container {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color:  #654a04;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+header, section, footer {
+    margin-bottom: 20px;
+    background-color:#b9795c ;
+}
+
+header {
+    text-align:left;
+    border-bottom: 2px solid #333;
+    padding-bottom: 10px;
+    background-color: #e2ad94;
+    margin: 10px;
+    padding:10px;
+    
+}
+header.img{
+    margin-left: 20%;
+    padding-left: 10%;
+}
+
+header h1 {
+    margin: 0;
+    font-family: "Lucida Console", Courier, monospace;
+}
+
+header p {
+    margin: 5px 0;
+    font-family: '';
+}
+
+section h2 {
+    color: #333;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 5px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+.profile-container{
+    background-color: #544528; 
+    border: 0.5rem outset rgb(80, 59, 20) ;    
+    border-radius: 12px;
+    font:bold 1rem sans-serif;
+    margin:2rem;
+    padding:1rem;
+    outline-offset: 0.5rem;
+}
+.summary{
+    background-color:#e2bf94;
+    margin: 10px;
+    padding: 10px;
+}
+.education{
+    margin: 10px;
+    padding: 10px;
+}
+.skills{
+    margin: 10px;
+    padding: 10px;
+}
+header.p{
+    font-family: fantasy;
+    font-size: large;
+}
+.chat-container{
+    margin: 10px;
+    padding: 10px;
+}
+.chat{
+    margin: 10px;
+    padding: 10px;
+}
+footer {
+    text-align: center;
+    background-color: #e2bf94;
+    color:black;
+}
+

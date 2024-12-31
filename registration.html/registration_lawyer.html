@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Page</title>
+    <!-- <link rel="stylesheet" href="regitration_lawyer.css"> -->
+    <style>
+    *{
+        margin: auto;
+     }
+         
+     
+     body {
+         font-family: Arial, sans-serif;
+          background-color: #5b371e; */
+         display: flex:flexbox
+         justify-content: left;
+         align-items: left;
+         height: 100vh;
+         margin: 10;
+     }
+     h3{
+         align-content: center;
+     }
+     
+     .container {
+         border: #28a745;;
+         background-image: url(newlaw.jpg);
+         background-repeat:no-repeat;
+         background-size: cover;
+         background-attachment: fixed;
+         padding: 80px;
+         padding-left: 10%;
+         padding-right: 50%;
+         margin-left: 10%;
+         margin-right: 10%;
+         box-sizing: 30vh;
+         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+         border-radius: 10px;
+         width: 300px;
+         align-content: left;
+     }
+     
+     h2 {
+         text-align: center;
+         margin-bottom: 20px;
+     }
+     
+     .form-group {
+         margin-bottom: 15px;
+         font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+     }
+     #document{
+         box-shadow: #fff;
+     }
+     
+     label {
+         display: block;
+         margin-bottom: 5px;
+     }
+     
+     input, select {
+        height:5%;
+         width: 100%;
+         padding: 20px;
+         border: 1px solid #ccc;
+         border-radius: 5px;
+     }
+     
+     button {
+         width: 100%;
+         padding: 10px;
+         background-color: #28a745;
+         color: #fff;
+         border: none;
+         border-radius: 5px;
+         cursor: pointer;
+         align-items: end;
+     }
+     
+     button:hover {
+         background-color: #235b2f;
+     }
+     input{
+         background-color: #fff;
+     }
+     </style>
+</head>
+<body>
+    <div class="container">
+        <h3 align="center"> Lawyer's Registration <br></h3><br>
+        <!-- <img src="law images.jpg" alt="" align="rights"> -->
+        <form action="regback.html" method="post" >
+            <h4>Personal Information</h4><br>
+            <div class="form-group">
+                <label for="Profile picture">Profile picture</label>
+                <input type="file" id="photo" name="photo" >
+                picture type must be jpg  format 250kb
+            </div>
+            <div class="form-group">
+                <label for="firstName" >First Name:</label>
+                <input type="text" id="firstName" name="firstName"  value="First name">
+            </div><br>
+            <div class="form-group">
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" name="lastName" required>
+            </div><br>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div><br>
+            <!-- <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div><br> -->
+            <!-- <div class="form-group">
+                <label for="confirmPassword">Confirm Password:</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" required>
+            </div><br> -->
+            <div class="form-group">
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender" required>
+                    <option value="">Select...</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+            </div><br>
+            <div class="form-group">
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" required>
+            </div><br>
+            <div class="form-group">
+                <label for="Phone Number">Phone Number:</label>
+                <input type="number" id="phone number" name="whatsapp" required>
+            </div><br>
+            <div class="form-group">
+                <label for="Years of experience"> Years of experience:</label>
+                <select id="experience" name="years of experince" required>
+                    <option value="">Select...</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="more than 10 years">more than 10 years</option>
+                </select></div><br>
+                <div class="form group">
+                    <label for="Upload for "></label>
+                </div>
+                <h4>Educational Details</h4><br>
+                <div class="form-group">
+                    <label for="Year of Qualification"> Year of Qualification:</label>
+                   <input type="date" id="qualification">
+                </div><br>
+                <div class="form-group">
+                   <label for="Qualified degree (Bachelor)">Qualified Degree (Bachelors):</label>
+                   <select name="degree" id="degree">
+                    <option value="LLB">LLB</option>
+                    <option value="BA-LLB">BA-LLB</option>
+                    <option value="BBA-LLB">BBA-LLB</option>
+                    <option value="BCA-LLB">BCA-LLB</option>
+                    <option value="B.Com-LLB">B.Com-LLB</option>
+                    <option value="B.Tech-LLB">B.Tech-LLB</option>
+                    <option value="B.Sc-LLB">B.SC-LLB</option>
+                   </select>
+                </div><br>
+                <div class="form-group">
+                    <label for="Name of institute of LLB">Name of institute of LLB:</label>
+                    <select name=" list of institute" id="institute of Bachelor">
+                        <option value="National law School of India">National law School of India</option>
+                        <option value="National law University">National law University</option>
+                        <option value="NALSAR University of  law">NALSAR University of law</option>
+                        <option value="" class="value"></option>
+                        <option value="" class="value"></option>
+                        <option value="" class="value"></option>
+                        <option value="" class="value"></option>
+                        <option value="" class="value"></option>
+                        <option value="" class="value"></option>
+                        <option value="" class="value"></option>
+                        <option value="" class="value"></option>
+                        <option value="" class="value"></option>
+                        <option value="" class="value"></option>
+                        <option value="" class="value"></option>
+                        <option value="" class="value"></option>
+                        <option value="" class="value"></option>
+                        <option value="" class="value"></option>
+                        <option value="" class="value"></option>
+                        <option value="" class="value"></option>
+                        <option value="" class="value"></option>
+                        <option value="" class="value"></option>
+                        <option value="" class="value"></option>
+                        <option value="" class="value"></option>
+                        <option value="" class="value"></option>
+                        <option value="" class="value"></option>
+                        <option value="" class="value"></option>
+                        <option value="" class="value"></option>
+                        <option value="" class="value"></option>
+                        <option value="" class="value"></option>
+                        <option value="" class="value"></option>
+
+                    </select>
+                </div><br>
+                <div class="form-group">
+                    <label for="upload degree">Upload your LLB degree</label>
+                    <input type="file" id="document">
+                </div>
+                <div class="form-group">
+                    <label for="Qualified degree (Masters)">Qualified Degree (Masters):</label>
+                    <select name="degree" id="degree">
+                     <option value="LLM (Business law)">LLM (Business law)</option>
+                     <option value="LLM (Constitutional law and human rights)">LLM (Constitutional law and human rights)</option>
+                     <option value="LLM (Intellectual property Law)">LLM (Intellectual property Law)</option>
+                     <option value="LLM (International law and Organisation)">LLM (Intellectual law and Organisation)</option>
+                     <option value="LLM (Enviormental law and legal order)">LLM (Enviormental law and legal order)</option>
+                     <option value="LLM (Human rights and duties education)">LLM (Human rights and duties education)</option>
+                     <option value="LLM (Labour law and administrative)">LLM (Labour law and adiministrative law)</option>
+                     <option value="LLM (Taxation law)">LLm (Taxation Law)</option>
+                     <option value="LLM (Criminal law and criminal justice adiministration)">LLM (Criminal law and criminal justice adiministration)</option>
+                    </select>
+                 </div><br>
+                 <div class="form-group">
+                    <label for="Name of institute of MLB">Name of institute of MLB:</label>
+                    <select name=" list of institute" id="institute of Bachelor">
+                        <option value="National law School of India">National law School of India</option>
+                        <option value="National law University">National law University</option>
+                        <option value="NALSAR University of  law">NALSAR University of law</option>
+                        <option value="" class="value"></option>
+                        <option value="" class="value"></option>
+                        <option value="" class="value"></option>
+                        <option value="" class="value"></option>
+                        <option value="" class="value"></option>
+                        <option value="" class="value"></option>
+                        <option value="" class="value"></option>
+                        <option value="" class="value"></option>
+                        <option value="" class="value"></option>
+                        <option value="" class="value"></option>
+                        <option value="" class="value"></option>
+                        <option value="" class="value"></option>
+                        <option value="" class="value"></option>
+                        <option value="" class="value"></option>
+                        <option value="" class="value"></option>
+                        <option value="" class="value"></option>
+                        <option value="" class="value"></option>
+                        <option value="" class="value"></option>
+                        <option value="" class="value"></option>
+                        <option value="" class="value"></option>
+                        <option value="" class="value"></option>
+                        <option value="" class="value"></option>
+                        <option value="" class="value"></option>
+                        <option value="" class="value"></option>
+                        <option value="" class="value"></option>
+                        <option value="" class="value"></option>
+                        <option value="" class="value"></option>
+                    </select>
+                </div><br>
+                <div class="form-group">
+                    <label for="upload degree">Upload your MLB degree</label>
+                    <input type="file" id="document">
+                </div>
+                <div class="form-group" id="document">
+                    <label for="upload protofolio">Upload your protofolio</label>
+                    <input type="file" id="document">
+                </div>
+
+                
+
+
+
+            
+            <button type="submit" >Register</button>
+        </form>
+    </div>
+</body>
+</html>

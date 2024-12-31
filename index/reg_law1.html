@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lawyer's Registration</title>
+    <!-- Google Fonts for better typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* General Styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: url('https://example.com/law-background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: #fff;
+            position: relative;
+        }
+
+        /* Add a dark overlay for text visibility */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: -1;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            max-width: 800px;
+            padding: 40px;
+            overflow: hidden;
+        }
+
+        h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5rem;
+            color: #6a1b9a;
+            text-align: center;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            position: relative;
+        }
+
+        h3::after {
+            content: '';
+            width: 50px;
+            height: 4px;
+            background: #d32f2f;
+            display: block;
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        h4 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.4rem;
+            color: #333;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            font-size: 1rem;
+            color: #333;
+            transition: all 0.3s ease;
+        }
+
+        input[type="file"] {
+            padding: 8px;
+            background-color: #fff;
+        }
+
+        input:focus, select:focus {
+            border-color: #6a1b9a;
+            outline: none;
+        }
+
+        small {
+            font-size: 0.9rem;
+            color: #777;
+            display: block;
+            margin-top: 5px;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            font-size: 1.2rem;
+            color: #fff;
+            background-color: #6a1b9a;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #4a148c;
+            transform: scale(1.05);
+        }
+
+        /* Media Query for responsiveness */
+        @media (max-width: 600px) {
+            .container {
+                width: 90%;
+                padding: 30px;
+            }
+
+            h3 {
+                font-size: 2rem;
+            }
+
+            h4 {
+                font-size: 1.2rem;
+            }
+
+            button {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3>Lawyer's Registration</h3>
+        <form action="regback.html" method="post" enctype="multipart/form-data">
+            <!-- Personal Information Section -->
+            <h4>Personal Information</h4>
+            <div class="form-group">
+                <label for="photo">Profile Picture</label>
+                <input type="file" id="photo" name="photo" accept="image/jpeg">
+                <small>Picture must be JPG format (max 250KB)</small>
+            </div>
+            <div class="form-group">
+                <label for="firstName">First Name</label>
+                <input type="text" id="firstName" name="firstName" required>
+            </div>
+            <div class="form-group">
+                <label for="lastName">Last Name</label>
+                <input type="text" id="lastName" name="lastName" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="gender">Gender</label>
+                <select id="gender" name="gender" required>
+                    <option value="">Select...</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="dob">Date of Birth</label>
+                <input type="date" id="dob" name="dob" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="experience">Years of Experience</label>
+                <select id="experience" name="experience" required>
+                    <option value="">Select...</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="more">More than 10 years</option>
+                </select>
+            </div>
+
+            <!-- Educational Details Section -->
+            <h4>Educational Details</h4>
+            <div class="form-group">
+                <label for="qualification">Year of Qualification</label>
+                <input type="date" id="qualification" name="qualification">
+            </div>
+            <div class="form-group">
+                <label for="degree">Qualified Degree (Bachelors)</label>
+                <select name="degree" id="degree">
+                    <option value="LLB">LLB</option>
+                    <option value="BA-LLB">BA-LLB</option>
+                    <option value="BBA-LLB">BBA-LLB</option>
+                    <option value="BCom-LLB">B.Com-LLB</option>
+                    <option value="B.Tech-LLB">B.Tech-LLB</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="institute">Institute Name</label>
+                <input type="text" id="institute" name="institute" required>
+            </div>
+            <div class="form-group">
+                <label for="llbDegree">Upload your LLB Degree</label>
+                <input type="file" id="llbDegree" name="llbDegree">
+            </div>
+
+            <div class="form-group">
+                <label for="mlbDegree">Upload your MLB Degree</label>
+                <input type="file" id="mlbDegree" name="mlbDegree">
+            </div>
+
+            <div class="form-group">
+                <label for="portfolio">Upload Portfolio</label>
+                <input type="file" id="portfolio" name="portfolio">
+            </div>
+
+            <button type="submit">Register</button>
+        </form>
+    </div>
+</body>
+</html>
+

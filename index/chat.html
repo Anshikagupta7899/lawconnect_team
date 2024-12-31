@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chatting system</title>
+    <style>
+        .body{
+            font-family: Arial, Helvetica, sans-serif;
+            background-color:rgb(235, 173, 28);
+        }
+        .chat{
+            align-items: center;
+        }
+        .navbar-expand-lgnavbar{
+            
+        }
+
+    </style>
+</head>
+<body>
+    <nav class="navbar-expand-lgnavbar ">
+        <div class="container">
+            <!-- <img src="logo.jpg" alt="LawConnects Logo" id="img"> -->
+            <a class="navbar-brand" href="index2.html">LawConnects</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="dash.html">Search Lawyers</a></li>
+                    <li class="nav-item"><a class="nav-link" href="reviews.html">Lawyer Reviews</a></li>
+                    <li class="nav-item"><a class="nav-link" href="case.html">Case Management</a></li>
+                    <li class="nav-item"><a class="nav-link" href="your profile.html">Profiles</a></li>
+                    <li class="nav-item"><a class="nav-link" href="search.html">Search your lawyer by name</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section class="chat">
+    <div class="chat-container">
+        <header>
+            <h1>Chat with Lawyer</h1>
+        </header>
+        <div class="chat-box" id="chatBox"></div>
+        <form id="chatForm">
+            <input type="text" id="messageInput" placeholder="Type a message..." required>
+            <button type="submit">Send</button>
+        </form>
+    </div>
+</section>
+
+    
+</body>
+</html><section class="chat">
+    <div class="chat-container">
+        <header>
+            <h1>Chat with Lawyer</h1>
+        </header>
+        <div class="chat-box" id="chatBox"></div>
+        <form id="chatForm">
+            <input type="text" id="messageInput" placeholder="Type a message..." required>
+            <button type="submit">Send</button>
+        </form>
+    </div>
+</section>
+
+<script>
+    const chatForm = document.getElementById('chatForm');
+    const messageInput = document.getElementById('messageInput');
+    const chatBox = document.getElementById('chatBox');
+
+    // Handle form submission
+    chatForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const message = messageInput.value.trim();
+        if (!message) return;
+
+        // Display user message
+        appendMessage('User', message);
+
+        // Send message to the backend
+        try {
+            const response = await fetch('/api/chat', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ message }),
+            });
+            const data = await response.json();
+            appendMessage('Lawyer', data.reply);
+        } catch (error) {
+            console.error('Error:', error);
+            appendMessage('Error', 'Could not reach the server.');
+        }
+
+        messageInput.value = '';
+    });
+
+    // Append message to the chatBox
+    function appendMessage(sender, message) {
+        const messageDiv = document.createElement('div');
+        messageDiv.textContent = `${sender}: ${message}`;
+        chatBox.appendChild(messageDiv);
+        chatBox.scrollTop = chatBox.scrollHeight;
+    }
+</script>
